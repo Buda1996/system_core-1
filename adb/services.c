@@ -79,7 +79,7 @@ void restart_root_service(int fd, void *cookie)
 
         property_get("persist.sys.root_access", value, "0");
         property_get("ro.build.type", build_type, "");
-        property_get("ro.blackbox.version", cm_version, "");
+        property_get("ro.blackbox.version", blackbox_version, "");
 
         if (strlen(blackbox_version) > 0 && strcmp(build_type, "eng") != 0 && (atoi(value) & 2) != 2) {
             snprintf(buf, sizeof(buf), "root access is disabled by system setting - enable in settings -> development options\n");
